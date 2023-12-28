@@ -51,10 +51,10 @@ GEM
 
 PLATFORMS
   arm64-darwin-23
+  x86_64-linux
 
 DEPENDENCIES
   bcrypt_pbkdf
-  bundler
   capistrano
   capistrano3-puma!
   ed25519

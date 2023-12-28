@@ -6,7 +6,6 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 gem "sinatra"
 gem "puma"
-gem "bundler"
 
 gem "capistrano", require: false
 gem "capistrano3-puma", github: "seuros/capistrano-puma", require: false
