@@ -3,10 +3,11 @@ require 'json'
 
 class FotaServer < Sinatra::Base
   get '/system' do
+    content_type :json
+
     file_path = 'REVISION'
     if File.exist?(file_path)
-      content = File.read(file_path)
-      content_type :json
+      content = File.read(file_path)  
       { revision: content }.to_json
     else
       status 404
@@ -15,11 +16,11 @@ class FotaServer < Sinatra::Base
   end
 
   get '/manifest' do
-    file_path = '/apps/fotasrv/shared/manifest.json'
+    content_type :json
 
+    file_path = '/apps/fotasrv/shared/fota_manifest.json'
     if File.exist?(file_path)
       content = File.read(file_path)
-      content_type :json
       content
     else
       status 404
@@ -28,6 +29,6 @@ class FotaServer < Sinatra::Base
   end
 
   get '/firmware' do
-    'Firmware route - under construction'
+    
   end
 end
