@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'json'
 
-class FotaServerApp < Sinatra::Base
+class FotaServer < Sinatra::Base
 get '/manifest' do
   file_path = 'path_to_file.json'
 

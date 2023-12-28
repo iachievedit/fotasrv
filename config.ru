@@ -1,4 +1,4 @@
-equire 'rubygems'
+require 'rubygems'
 Gem.clear_paths
 
 require './app'
