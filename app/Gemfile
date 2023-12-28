@@ -8,5 +8,6 @@ gem "sinatra"
 gem "puma"
 
 gem "capistrano", require: false
+gem "capistrano-puma", require: false
 gem "ed25519", require: false
 gem "bcrypt_pbkdf", require: false
