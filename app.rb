@@ -28,7 +28,16 @@ class FotaServer < Sinatra::Base
     end
   end
 
-  get '/firmware' do
-    
+  # perhaps let NGINX handle this
+  get '/firmware/:binary' do
+    puts "Firmware binary: #{params[:binary]}"
+
+    file_path = "/apps/fotasrv/shared/firmware/#{params[:binary]}"
+    if File.exist?(file_path)
+      send_file file_path, disposition: 'attachment'
+    else
+      status 404
+      { error: 'Firmware binary not found' }.to_json
+    end
   end
 end
