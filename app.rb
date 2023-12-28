@@ -1,7 +1,12 @@
 require 'sinatra'
 require 'json'
+require 'rack'
 
 class FotaServer < Sinatra::Base
+  use Rack::Auth::Basic, "Restricted" do |username, password|
+    username == ENV['FOTASRV_USERNAME'] && password == ENV['FOTASRV_PASSWORD']
+  end
+
   get '/system' do
     content_type :json
 
