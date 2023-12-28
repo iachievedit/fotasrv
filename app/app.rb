@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'json'
 
+class FotaServerApp < Sinatra::Base
 get '/manifest' do
   file_path = 'path_to_file.json'
 
@@ -17,4 +18,4 @@ end
 get '/firmware' do
   'Firmware route - under construction'
 end
-
+end
